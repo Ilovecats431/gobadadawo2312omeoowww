@@ -14,11 +14,14 @@ export function AdSection() {
     <div className="ad-section">
       <BigAd bgImage="./src/assets/teddy-bear.png" />
       <div className="s-sec-ad f-grow">
-        <HorizontalAd />
+        <HorizontalAd bgImage='src/assets/iphone-ad.png'/>
+        <HorizontalAd bgImage='src/assets/yakult-ad.png'/>
       </div>
     </div>
   );
 }
+// <-- COMPONENT
+
 
 export function BigAd({ bgImage }) {
   return (
@@ -33,13 +36,39 @@ export function BigAd({ bgImage }) {
 
 export function HorizontalAd({ bgImage }) {
   return (
-    <div className="h-ad-wrapper" style={{ backgroundImage: bgImage }}>
+    <div className="h-ad-wrapper" style={{ backgroundImage: `url(${bgImage})` }}>
       <MoreButton />
     </div>
   );
 }
 
 //<-- Ad Section!!!
+//<-- Ad Section!!!
+//<-- Ad Section!!!
+
+
+const CategorySection = ()  => {
+
+}
+
+// Horizontal Recommend Items
+export function HRI() {
+
+  return (
+    <>
+    <div className='HRI'>
+      
+    </div>
+    </>
+  )
+}
+
+
+
+
+
+
+// <-- Body Section
 
 // Button Section
 export function ShopButton({ color, scale }) {
@@ -60,6 +89,6 @@ export function MoreButton() {
 export function CartButton() {
   return <button className="atc-btn">Add to cart</button>;
 }
-2;
+;
 
 // Button Section

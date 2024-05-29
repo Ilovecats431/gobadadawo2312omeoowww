@@ -1,12 +1,16 @@
 /* BODY.CSS */
-
+button {
+  z-index: 2;
+}
 
 .f-grow {
   flex-grow: 1;
 }
 
 .s-sec-ad {
-
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .b-ad-wrapper {
@@ -25,15 +29,15 @@
 
 #main-body {
   height: 100%;
-  background-color: rgb(163, 163, 163);
+  background-color: rgb(201, 201, 201);
 }
 
 .ad-section {
   display: flex;
   height: 35rem;
   width: 100%;
-  padding: 0.7rem;
-  gap: 1rem;
+  padding: 1rem;
+  gap: 1.3rem;
   box-sizing: border-box;
   background-color: rgb(255, 255, 255);6
 }
@@ -47,10 +51,17 @@
   box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   background-position: center;
+  position: relative;
+}
+
+.h-ad-wrapper > button {
+  position: absolute;
+  left: 20px;
+  bottom: 13px;
 }
 
 .s-btn {
-  width: 15%;
+  width: 5.9rem;
   padding-inline: 1rem;
   padding-block: 0.4rem;
   border-radius: 9px;
@@ -58,12 +69,13 @@
 }
 
 .m-btn {
-  /* width: 15%; */
-  padding-inline: 0.5rem;
-  padding-block: 0.2rem;
-  border-radius: 15px;
-  box-shadow: 0px 0px 13px rgba(8, 7, 7, 0.2);
+  border: solid black 1px;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  box-shadow: 0px 0px 13px rgba(87, 84, 84, 0.1);
   color: black;
+  font-size: 1.5rem;
+  background-color: whitesmoke;
 }
 
 .atc-btn {
