@@ -1,5 +1,6 @@
 body,
 html {
+  font-size: 14px;
   margin: 0;
   padding: 0;
   border: 0;
@@ -12,6 +13,11 @@ h3 {
   margin: 0;
 }
 /* FONTS */
+.black {
+  color: black;
+}
+
+
 details {
   border: none;
   padding: 0;

@@ -27,19 +27,130 @@ button {
   background-position: center;
 }
 
-#main-body {
+.hri {
+  overflow: hidden;
+  box-sizing: border-box;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+  position: relative;
+  font-size: 2rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  width: 98%;
+  height: 20rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding-inline: 0.2rem;
+}
+
+.categories-section {
+  padding-block: 3rem;
+}
+
+.hri::before {
+  content: 'Todays Deals';
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 500;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: absolute;
+  top: 0;
+}
+
+.c-bndle-s {
+  display: flex;
+  justify-content: space-around;
+}
+
+.bndle-name {
+  font-size: 2rem;
+  font-weight: 500;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: absolute;
+  top: 0.7rem;
+}
+
+.p-bndle-s {
+  display: flex;
+  justify-content: space-around;
+}
+
+.b-organizer {
+  position: relative;
+  overflow: hidden;
+  height: 60%;
+  width: 90%;
+  background-color: tomato;
+  box-shadow: 0px 0px 16px 1px rgba(100, 100, 100, 0.1);
+}
+
+.bndle-img {
+  object-fit: cover;
   height: 100%;
-  background-color: rgb(201, 201, 201);
+}
+
+.bundle-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  aspect-ratio: 6/7;
+  width: 20rem;
+  background-color: white;
+  justify-content: center;
+}
+
+
+.bndle-a {
+  display: flex;
+  object-fit: cover;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  box-shadow: 10px 0px 16px rgba(100, 100, 100, 0.1);
+}
+
+.hri::after {
+  content: 'On Sale!';
+  display: inline-block;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: absolute;
+  background-color: rgb(249, 67, 34);
+  padding-inline: 0.5rem;
+  padding-block: 0.3rem;
+  border-radius: 15px 0px 15px 0px;
+  top: 0;
+  right: 0;
+}
+
+.td-deals {
+  object-fit: cover;
+  height: 100%;
+}
+
+#main-body {
+  background-color: rgb(226, 226, 226);
 }
 
 .ad-section {
   display: flex;
-  height: 35rem;
+  height: 42rem;
   width: 100%;
   padding: 1rem;
   gap: 1.3rem;
   box-sizing: border-box;
   background-color: rgb(255, 255, 255);6
+}
+
+.tdd-section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding-inline: 1rem;
 }
 
 .h-ad-wrapper {

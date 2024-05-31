@@ -81,7 +81,7 @@ export function Location() {
     <div className="p-relative flex align-center">
       <img
         className="icon"
-        src="https://cdn.iconfinder.com/stored_data/1714140/128/png?token=1716797698-MjXAiUZN3NEK%2B6dBTba6Z2hnwbesOYEd3WU7W45I0Zo%3D"
+        src="src/assets/location.png"
         alt="location"
       />
       <h4>Location: Calif, United State...</h4>
