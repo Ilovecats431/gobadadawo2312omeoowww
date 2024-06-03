@@ -1,5 +1,6 @@
-import { useEffect, useRef } from 'react';
+import { createContext, createRef, useContext, useEffect, useRef, useState } from 'react';
 import './header.css';
+import NavigationBar from './nav/sideNav';
 
 export default function MainNavigation() {
   return (
@@ -69,7 +70,7 @@ export function TopRight() {
       <div className="flex align-center between stdp">
         <Orders />
         <Language />
-        <Donate />
+        <Account />
         <PhoneNumber number="808-367-9874" />
       </div>
     </div>
@@ -94,21 +95,45 @@ export function Orders() {
 }
 
 export function Language() {
-  useEffect(() => {}, []);
+  let countryLang = createRef(null)
+  let countryImg = createRef(null)
+  const countryIcon = {GER: "https://cdn2.iconfinder.com/data/icons/flags_gosquared/64/Germany.png", JPN: "https://cdn2.iconfinder.com/data/icons/flags_gosquared/64/Japan.png", EN: 'https://cdn2.iconfinder.com/data/icons/flags/flags/48/united-states-of-america-usa.png'}
+ 
+  useEffect(() => {
+      let balue = countryLang.current
+      let tt = document.getElementsByClassName('rr-tb');
+
+
+      const add = (e) => {
+        countryImg.current.src = countryIcon[balue.innerHTML]        
+      }
+
+      Array.from(tt).forEach((e) => {
+        e.addEventListener('mouseup', add)
+      })
+
+      return () => {
+         Array.from(tt).forEach((e) => {
+          e.removeEventListener('mouseup', add)
+        })
+      }
+
+  }, [countryLang]);
 
   return (
     <div id="l-div">
       <img
-        src="https://cdn2.iconfinder.com/data/icons/flags/flags/48/united-states-of-america-usa.png"
-        alt=""
+        ref={countryImg}
+        src={countryIcon.EN}
+        alt="country flag icon"
       />
-      <DDMenu options={['EN', 'JPN', 'GER', 'RUS', 'CHI', 'FR']} />
+      <DDMenu options={['EN', 'JPN', 'GER', 'RUS', 'CHI', 'FR']} refValue={countryLang} />
     </div>
   );
 }
 
-export function Donate() {
-  return <button>donate</button>;
+export function Account() {
+  return <button>Account</button>;
 }
 
 export function PhoneNumber({ number }) {
@@ -122,23 +147,46 @@ export function PhoneNumber({ number }) {
 
 // <-- TOP RIGHT
 
+
 export function BottomRight() {
+  let [openNav, setOpenNav] = useState(false)
+  let mainBruh = createRef(null)
+  
+
+  useEffect(() => {
+    const data = mainBruh.current
+
+    const switchItUp = (e) => {
+      setOpenNav(prevValue => !prevValue)
+    }
+
+    data.addEventListener('click', switchItUp)
+
+    return () => {
+      data.removeEventListener('click', switchItUp)
+    }
+  }, [])
+
   return (
     <div id="n-b">
-      <AdvanceSB />
-      <div className="extra-uis">
-        <ShoppingCart />
-        <WishList />
-        <MenuBar />
-      </div>
+        <AdvanceSB />
+        <div className="extra-uis">
+          <ShoppingCart />
+          <WishList />
+          <MenuBar  stateArr={[openNav, setOpenNav]} rabam={mainBruh}/>
+        </div>
+        {openNav ? <NavigationBar/> : ''}
     </div>
   );
 }
 
-export function MenuBar({ menuIcon }) {
+export function MenuBar({ menuIcon, rabam}) {
+
+
+
   return (
     <>
-      <button className="menu-icon">
+      <button ref={rabam} className="menu-icon">
         <img
           src={menuIcon ? menuIcon : './src/assets/g-menu.png'}
           alt="roar"
@@ -189,7 +237,8 @@ export function AdvanceSB() {
 
 // <-- BOTTOM RIGHT
 
-export function DDMenu({ options }) {
+export function DDMenu({ options, refValue }) {
+  // options = array / []
   let targetElement = useRef(null);
 
   useEffect(() => {
@@ -197,7 +246,6 @@ export function DDMenu({ options }) {
     let choices = Array.from(choicess);
     const defaultValue = targetElement.current.querySelector('.main-sum');
 
-    console.log(choices);
 
     const transport = (e) => {
       defaultValue.innerHTML = e.target.innerHTML;
@@ -217,7 +265,7 @@ export function DDMenu({ options }) {
   return (
     <div className="DD-menu">
       <details ref={targetElement} className="m-details">
-        <summary className="main-sum">{options[0]}</summary>
+        <summary className="main-sum" ref={refValue}>{options[0]}</summary>
         <div className="m-summaries">
           {options.map((option, index) => (
             <summary className="rr-tb" key={index}>

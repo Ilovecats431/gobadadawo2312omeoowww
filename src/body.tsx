@@ -1,3 +1,4 @@
+import { useContext, useState, createContext } from 'react';
 import './body.css';
 import './header.css';
 
@@ -6,9 +7,12 @@ export default function Body() {
     <section id="main-body">
       <AdSection />
       <CategorySection/>
+      <RecommendationSection/>
     </section>
   );
 }
+
+
 
 export function AdSection() {
   return (
@@ -83,14 +87,16 @@ const BundleSection = () => {
   <>
   <div className='p-bndle-s'>
     <div className='c-bndle-s'>
-    <Bundles bundleName='Protein Drinks' objProduct={[{src: './NoSource', img: 'https://m.media-amazon.com/images/I/719eDVmYeYL._AC_UL480_FMwebp_QL65_.jpg'}, {src: './NoSoure', img: 'https://m.media-amazon.com/images/I/81U1j+Ni3BL._AC_UL480_FMwebp_QL65_.jpg'}, {src: './NoSoure', img: 'https://m.media-amazon.com/images/I/81gd0FxLYYL._AC_UL480_FMwebp_QL65_.jpg'} ]} />
-    <Bundles bundleName='Protein Drinks' objProduct={[{src: './NoSource', img: 'https://m.media-amazon.com/images/I/719eDVmYeYL._AC_UL480_FMwebp_QL65_.jpg'}, {src: './NoSoure', img: 'https://m.media-amazon.com/images/I/81U1j+Ni3BL._AC_UL480_FMwebp_QL65_.jpg'}, {src: './NoSoure', img: 'https://m.media-amazon.com/images/I/81gd0FxLYYL._AC_UL480_FMwebp_QL65_.jpg'} ]} />
-    <Bundles bundleName='Protein Drinks' objProduct={[{src: './NoSource', img: 'https://m.media-amazon.com/images/I/719eDVmYeYL._AC_UL480_FMwebp_QL65_.jpg'}, {src: './NoSoure', img: 'https://m.media-amazon.com/images/I/81U1j+Ni3BL._AC_UL480_FMwebp_QL65_.jpg'}, {src: './NoSoure', img: 'https://m.media-amazon.com/images/I/81gd0FxLYYL._AC_UL480_FMwebp_QL65_.jpg'} ]} />
+      <Bundles bundleName='Protein Drinks' objProduct={[{src: './NoSource', img: 'https://m.media-amazon.com/images/I/719eDVmYeYL._AC_UL480_FMwebp_QL65_.jpg'}, {src: './NoSoure', img: 'https://m.media-amazon.com/images/I/81U1j+Ni3BL._AC_UL480_FMwebp_QL65_.jpg'}, {src: './NoSoure', img: 'https://m.media-amazon.com/images/I/81gd0FxLYYL._AC_UL480_FMwebp_QL65_.jpg'} ]} />
+      <Bundles bundleName='Protein Drinks' objProduct={[{src: './NoSource', img: 'https://m.media-amazon.com/images/I/719eDVmYeYL._AC_UL480_FMwebp_QL65_.jpg'}, {src: './NoSoure', img: 'https://m.media-amazon.com/images/I/81U1j+Ni3BL._AC_UL480_FMwebp_QL65_.jpg'}, {src: './NoSoure', img: 'https://m.media-amazon.com/images/I/81gd0FxLYYL._AC_UL480_FMwebp_QL65_.jpg'} ]} />
+      <Bundles bundleName='Protein Drinks' objProduct={[{src: './NoSource', img: 'https://m.media-amazon.com/images/I/719eDVmYeYL._AC_UL480_FMwebp_QL65_.jpg'}, {src: './NoSoure', img: 'https://m.media-amazon.com/images/I/81U1j+Ni3BL._AC_UL480_FMwebp_QL65_.jpg'}, {src: './NoSoure', img: 'https://m.media-amazon.com/images/I/81gd0FxLYYL._AC_UL480_FMwebp_QL65_.jpg'} ]} />
+      <Bundles bundleName='Protein Drinks' objProduct={[{src: './NoSource', img: 'https://m.media-amazon.com/images/I/719eDVmYeYL._AC_UL480_FMwebp_QL65_.jpg'}, {src: './NoSoure', img: 'https://m.media-amazon.com/images/I/81U1j+Ni3BL._AC_UL480_FMwebp_QL65_.jpg'}, {src: './NoSoure', img: 'https://m.media-amazon.com/images/I/81gd0FxLYYL._AC_UL480_FMwebp_QL65_.jpg'} ]} />
     </div>
     <div className='c-bndle-s'>
-    <Bundles bundleName='Protein Drinks' objProduct={[{src: './NoSource', img: 'https://m.media-amazon.com/images/I/719eDVmYeYL._AC_UL480_FMwebp_QL65_.jpg'}, {src: './NoSoure', img: 'https://m.media-amazon.com/images/I/81U1j+Ni3BL._AC_UL480_FMwebp_QL65_.jpg'}, {src: './NoSoure', img: 'https://m.media-amazon.com/images/I/81gd0FxLYYL._AC_UL480_FMwebp_QL65_.jpg'} ]} />
-    <Bundles bundleName='Protein Drinks' objProduct={[{src: './NoSource', img: 'https://m.media-amazon.com/images/I/719eDVmYeYL._AC_UL480_FMwebp_QL65_.jpg'}, {src: './NoSoure', img: 'https://m.media-amazon.com/images/I/81U1j+Ni3BL._AC_UL480_FMwebp_QL65_.jpg'}, {src: './NoSoure', img: 'https://m.media-amazon.com/images/I/81gd0FxLYYL._AC_UL480_FMwebp_QL65_.jpg'} ]} />
-    <Bundles bundleName='Protein Drinks' objProduct={[{src: './NoSource', img: 'https://m.media-amazon.com/images/I/719eDVmYeYL._AC_UL480_FMwebp_QL65_.jpg'}, {src: './NoSoure', img: 'https://m.media-amazon.com/images/I/81U1j+Ni3BL._AC_UL480_FMwebp_QL65_.jpg'}, {src: './NoSoure', img: 'https://m.media-amazon.com/images/I/81gd0FxLYYL._AC_UL480_FMwebp_QL65_.jpg'} ]} />
+      <Bundles bundleName='Protein Drinks' objProduct={[{src: './NoSource', img: 'https://m.media-amazon.com/images/I/719eDVmYeYL._AC_UL480_FMwebp_QL65_.jpg'}, {src: './NoSoure', img: 'https://m.media-amazon.com/images/I/81U1j+Ni3BL._AC_UL480_FMwebp_QL65_.jpg'}, {src: './NoSoure', img: 'https://m.media-amazon.com/images/I/81gd0FxLYYL._AC_UL480_FMwebp_QL65_.jpg'} ]} />
+      <Bundles bundleName='Protein Drinks' objProduct={[{src: './NoSource', img: 'https://m.media-amazon.com/images/I/719eDVmYeYL._AC_UL480_FMwebp_QL65_.jpg'}, {src: './NoSoure', img: 'https://m.media-amazon.com/images/I/81U1j+Ni3BL._AC_UL480_FMwebp_QL65_.jpg'}, {src: './NoSoure', img: 'https://m.media-amazon.com/images/I/81gd0FxLYYL._AC_UL480_FMwebp_QL65_.jpg'} ]} />
+      <Bundles bundleName='Protein Drinks' objProduct={[{src: './NoSource', img: 'https://m.media-amazon.com/images/I/719eDVmYeYL._AC_UL480_FMwebp_QL65_.jpg'}, {src: './NoSoure', img: 'https://m.media-amazon.com/images/I/81U1j+Ni3BL._AC_UL480_FMwebp_QL65_.jpg'}, {src: './NoSoure', img: 'https://m.media-amazon.com/images/I/81gd0FxLYYL._AC_UL480_FMwebp_QL65_.jpg'} ]} />
+      <Bundles bundleName='Protein Drinks' objProduct={[{src: './NoSource', img: 'https://m.media-amazon.com/images/I/719eDVmYeYL._AC_UL480_FMwebp_QL65_.jpg'}, {src: './NoSoure', img: 'https://m.media-amazon.com/images/I/81U1j+Ni3BL._AC_UL480_FMwebp_QL65_.jpg'}, {src: './NoSoure', img: 'https://m.media-amazon.com/images/I/81gd0FxLYYL._AC_UL480_FMwebp_QL65_.jpg'} ]} />
     </div>
   </div>
   </>)
@@ -105,7 +111,7 @@ export function Bundles({bundleName, objProduct}) {
         <h1 className='bndle-name black'>{bundleName}</h1>
         <div className='b-organizer'>
         {objProduct.map((obj, index) => (
-          <Bundle src={obj.src} img={obj.img} distance={index}/>
+          <Bundle key={index} src={obj.src} img={obj.img} distance={index}/>
         ))}
       </div>
         </div>
@@ -118,15 +124,123 @@ const Bundle = ({src, img, distance}) => {
 
   return (
     <>
-    <a style={{right: `${distance * 5}rem`}} className='bndle-a' href={src}>
-      <img className='bndle-img' src={img} alt="bundle-product" />
-    </a>
+      <a style={{right: `${distance * 5}rem`}} className='bndle-a' href={src}>
+        <img className='bndle-img' src={img} alt="bundle-product" />
+      </a>
     </>
   )
 }
 
 
+// Item Related
 
+let itemInformation = createContext(null)
+
+const RecommendationSection = () => {
+
+  return (
+    <>
+    <div className='r-tata'>
+    <h1 className='b-font recmen'>Recommended:</h1>
+      <div className='rmn-section flex align-center'>
+        <ItemShowcase img='https://i.pinimg.com/736x/8c/fa/3b/8cfa3be2a7df8f876281384542c8b676.jpg' name='Gang Leader' rating={1} totalRaters={3} cost={{dollars: 9, cents: 99}} />
+        <ItemShowcase img='https://i.pinimg.com/736x/8c/fa/3b/8cfa3be2a7df8f876281384542c8b676.jpg' name='Gang Leader' rating={1} totalRaters={3} cost={{dollars: 9, cents: 99}} />
+        <ItemShowcase img='https://i.pinimg.com/736x/8c/fa/3b/8cfa3be2a7df8f876281384542c8b676.jpg' name='Gang Leader' rating={1} totalRaters={3} cost={{dollars: 9, cents: 99}} />
+        <ItemShowcase img='https://i.pinimg.com/564x/6c/35/1c/6c351ce354dd9f61dfe99864a3369d83.jpg' name='Texas' rating={4} totalRaters={879} cost={{dollars: 19, cents: 99}} />
+        <ItemShowcase img='https://i.pinimg.com/736x/8c/fa/3b/8cfa3be2a7df8f876281384542c8b676.jpg' name='Gang Leader' rating={1} totalRaters={3} cost={{dollars: 9, cents: 99}} />
+      </div>
+      </div>
+    </>
+  )
+}
+
+
+export function ItemShowcase({img, name, rating, totalRaters, cost}) {
+  // cost = {dollars: 9, cents: 99}
+  const iInfo = {name, rating, totalRaters, cost}
+
+  return (
+    <div className='i-sc'>
+        <itemInformation.Provider value={iInfo}>
+          <img className='i-img' src={img} alt="product" />
+          <ItemInformation/>
+        </itemInformation.Provider>
+    </div>
+  )
+}
+
+export function ItemInformation() {
+  let iInfo = useContext(itemInformation)
+
+
+  return (
+    <div className='more-i'>
+      <h1 className='id-i'>{iInfo.name}</h1>
+      <UserRating stars={iInfo.rating} users={iInfo.totalRaters}/>
+      <PriceTag dollars={iInfo.cost.dollars} cents={iInfo.cost.cents}/>
+      <CartButton/>
+    </div>  
+  )
+}
+
+
+export function PriceTag({dollars, cents}) {
+
+  return (
+    <>
+      <h1 className='b-font'>${dollars}.<span className='sml-f'>{cents}</span></h1>
+    </>
+  )
+}
+
+
+export function UserRating({stars, users}) {
+  return (
+    <>
+      <div className='i-rs flex align-center'>
+      <StarRating stars={stars}/>
+      <UserCount total={users} />
+      </div>
+  </>
+  )
+}
+
+
+export function StarRating({stars}) {
+  // starts = integer | 1 - 5
+  const five = [1,2,3,4,5];
+
+  
+
+  return (
+    // rating wrapper
+    <div className='rw'>
+      {five.map((e, index) => (
+        <Star key={index} boolean={(index < stars) ? true : false } />
+      ))}
+    </div>
+  )
+}
+
+export function Star({ boolean }) {
+  const starColor = boolean ? 'src/assets/star-set/y-star.png' : 'src/assets/star-set/g-star.png';
+  const alt = boolean ? 'yellow colored star defining positivity' : 'gray colored star defining zero positivity';
+
+  return (
+    <img className='icon' src={starColor} alt={alt} />
+  );
+}
+
+
+export function UserCount({total}) {
+
+  return (
+    <div className='flex align-center'>
+      <h3 style={{color: '#2f6dff'}}>{total}</h3>      
+      <img className='icon' src="src/assets/user.png" alt="user icon: indicates a real peron" />
+    </div>
+  )
+}
 
 // <-- Body Section
 
